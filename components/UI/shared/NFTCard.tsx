@@ -22,11 +22,17 @@ const NFTCard = (props: Props) => {
       style={cardStyle}
       className="NFTCard bg-light rounded-3xl flex flex-col"
     >
-      <img
-        src={item.src}
-        className="rounded-t-3xl w-full object-cover"
-        style={imgStyle}
-      />
+      <a
+        href={`https://twitter.com/${item.artistTag}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          src={item.src}
+          className="rounded-t-3xl w-full object-cover"
+          style={imgStyle}
+        />
+      </a>
       <div className="p-6 py-4" style={{ borderTop: "solid #EBEBEB 1px" }}>
         <div>
           <p className="font-bold text-grey-700 text-2xl mb-2">{item.title}</p>
