@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import { useRouter } from "next/router";
 
 type Props = {};
