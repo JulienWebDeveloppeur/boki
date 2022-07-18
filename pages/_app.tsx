@@ -5,21 +5,15 @@ import theme from "../styles/theme/theme";
 import { Provider } from "react-redux";
 import { store } from "store/index";
 import NavBar from "components/UI/NavBar";
-import {
-  EthersProvidersContext,
-  EthersProviders,
-} from "store/context/ethersProviders";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <EthersProvidersContext.Provider value={EthersProviders}>
-          <NavBar />
-          <main>
-            <Component {...pageProps} />
-          </main>
-        </EthersProvidersContext.Provider>
+        <NavBar />
+        <main>
+          <Component {...pageProps} />
+        </main>
       </ThemeProvider>
     </Provider>
   );
