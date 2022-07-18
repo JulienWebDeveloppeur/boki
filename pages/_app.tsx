@@ -1,8 +1,28 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "styles/globals.css";
+import type { AppProps } from "next/app";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../styles/theme/theme";
+import { Provider } from "react-redux";
+import { store } from "store/index";
+import NavBar from "components/UI/NavBar";
+import {
+  EthersProvidersContext,
+  EthersProviders,
+} from "store/context/ethersProviders";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <EthersProvidersContext.Provider value={EthersProviders}>
+          <NavBar />
+          <main>
+            <Component {...pageProps} />
+          </main>
+        </EthersProvidersContext.Provider>
+      </ThemeProvider>
+    </Provider>
+  );
 }
 
-export default MyApp
+export default MyApp;
