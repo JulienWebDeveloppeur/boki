@@ -11,7 +11,10 @@ const Boki: NextPage = () => {
     <Fragment>
       <div className="Boki container p-4 flex flex-col lg:flex-row mt-8 mx-auto">
         <div className="w-full lg:w-1/3 p-12">
-          <img src={item.src} className="rounded-3xl w-96 mx-auto" />
+          <img
+            src={item.src?.toString()}
+            className="rounded-3xl w-96 mx-auto"
+          />
         </div>
         <div className="w-full lg:w-2/3 text-center">
           <h1>{item.title}</h1>
