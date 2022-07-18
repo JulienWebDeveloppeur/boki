@@ -63,13 +63,8 @@ const Carousel = ({ children, itemWidth = 0 }: CarouselProps) => {
       >
         <IconButton
           color="secondary"
-          className="arrow-btn"
-          style={{
-            top: carouselHeight / 2,
-            left: "-1.25rem",
-            position: "absolute",
-            zIndex: "10",
-          }}
+          className="absolute arrow-btn -left-5 z-10"
+          style={{ top: carouselHeight / 2 }}
           onClick={() => {
             updateIndex(activeIndex - 1);
           }}
@@ -77,14 +72,9 @@ const Carousel = ({ children, itemWidth = 0 }: CarouselProps) => {
           <ArrowBackIosNewOutlined />
         </IconButton>
         <IconButton
-          style={{
-            top: carouselHeight / 2,
-            right: "-1.25rem",
-            position: "absolute",
-            zIndex: "10",
-          }}
+          style={{ top: carouselHeight / 2 }}
           color="secondary"
-          className="arrow-btn"
+          className="absolute arrow-btn top-0 -right-5 z-10"
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
